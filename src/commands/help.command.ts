@@ -5,15 +5,11 @@ export function handleHelpCommand(bot: TelegramBot) {
 
 /deposit - Register a deposit.
 /expense - Register an expense.
-/currentAmount - Check the current amount.
+/getTotalExpenses - Check the total expenses.
 /help - See the available commands.`;
 
   bot.onText(/\/help/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(
-      chatId,
-      text,
-      { parse_mode: "Markdown" }
-    );
+    bot.sendMessage(chatId, text, { parse_mode: "Markdown" });
   });
 }

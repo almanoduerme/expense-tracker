@@ -1,24 +1,29 @@
-## Telegram Bot: Expense Tracker
+# Telegram Bot: Expense Tracker
 
 This is a TypeScript project a Telegram bot using the `node-telegram-bot-api` library.
 
-### Dependencies
-- `node-telegram-bot-api`
-- `dotenv`
-- `googleapis`
+## Dependencies
 
-### Usage
+- node-telegram-bot-api
+- dotenv
+- googleapis
+- ts-node-dev
+- rimraf
+- typescript
 
-1. Install the required dependencies using `npm install`, `yarn install` or your preferred package manager.
+## Usage
+
+1. Install the required dependencies using `npm install`, `pnpm install` or your preferred package manager.
 2. Create a `.env` file and add complete the lines with the required information. You can use the `.env.example` file as a template.
 3. Run the bot using `npm run start`, `yarn start` or your preferred package manager.
 
-### Commands
+## Commands
 
 - `/start` - Starts the bot.
+- `/expenseCommand` - Adds an expense to the database.
+- `/depositCommand` - Adds a deposit to the database.
+- `/getTotalExpenses` - Shows the total expenses.
 - `/help` - Shows the help message.
-- `expenseCommand` - Adds an expense to the database.
-- `depositCommand` - Adds a deposit to the database.
 
 ### Google Sheets API Integration Guide
 

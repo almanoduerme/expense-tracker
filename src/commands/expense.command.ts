@@ -1,7 +1,7 @@
 import TelegramBot = require("node-telegram-bot-api");
 import { getCurrentDate, getCurrentTime } from "../utils/getDate";
 import { manageDepositDao } from "../dao/dao";
-import { Category, Expense } from "../types/dataTypes";
+import { Category, Expense } from "../types/data.types";
 
 export function handleExpenseCommand(bot: TelegramBot) {
   bot.onText(/\/expense/, (msg, match) => {
@@ -40,7 +40,7 @@ export function handleExpenseCommand(bot: TelegramBot) {
     };
 
     try {
-      manageDepositDao.appendGoogleSheet(expenseObj, 'expenses!A2:E2');
+      manageDepositDao.appendGoogleSheet(expenseObj,  `${process.env.WORKSHEET_NAME}!${process.env.RANGE}`);
       bot.sendMessage(chatId, 'Expense registered!');
     } catch (error) {
       bot.sendMessage(chatId, 'Error registering expense.');

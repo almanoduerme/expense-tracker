@@ -1,5 +1,5 @@
 import { appendDataToSheet, getGoogleSheetsClient, readSheetData } from "../database/config";
-import { Range } from "../types/dataTypes";
+import { Range } from "../types/data.types";
 import dotenv = require('dotenv');
 
 dotenv.config();

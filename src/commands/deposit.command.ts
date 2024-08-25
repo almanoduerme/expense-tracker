@@ -1,7 +1,7 @@
 import TelegramBot = require("node-telegram-bot-api");
 import { manageDepositDao } from "../dao/dao";
 import { getCurrentDate } from "../utils/getDate";
-import { Deposits } from "../types/dataTypes";
+import { Deposits } from "../types/data.types";
 
 export function handleDepositCommand(bot: TelegramBot) {
   bot.onText(/\/deposit/, (msg, match) => {

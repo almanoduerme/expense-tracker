@@ -7,6 +7,7 @@ export async function getGoogleSheetsClient(clientEmail: string, privateKey: str
       client_email: clientEmail,
       private_key: privateKey,
     },
+    
     scopes: "https://www.googleapis.com/auth/spreadsheets",
   });
   const client = await auth.getClient();
@@ -18,9 +19,7 @@ export async function readSheetData(client: string, spreadsheetId: string, range
   const sheets = google.sheets({ version: "v4", auth: client });
 
   try {
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId, range,
-    });
+    const response = await sheets.spreadsheets.values.get({ spreadsheetId, range });
     return response.data;
   } catch (error) {
     console.error("Error reading sheet data:", error);
